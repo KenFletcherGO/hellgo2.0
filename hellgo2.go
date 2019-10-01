@@ -20,7 +20,7 @@ func main() {
 	*/
 
 	fmt.Printf("Welcome please select your language from the below\n")
-	for i:= 0; i < languages; i++ {
+	for i := 0; i < 4; i++ {
 		fmt.Printf(languages[i])
 	}
 
