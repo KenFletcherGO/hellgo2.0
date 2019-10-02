@@ -14,6 +14,7 @@ func main() {
 	languages["ko"] = "Anyo Haseyo"
 	languages["ru"] = "Privet"
 	languages["ja"] = "Konnichiwa"
+	languages["ph"] = "Kamusta"
 	var options = make(map[string]string)
 	options["en"] = "English"
 	options["es"] = "Espanol"
@@ -22,6 +23,7 @@ func main() {
 	options["ko"] = "Korean"
 	options["ru"] = "Russian"
 	options["ja"] = "Japanese"
+	options["ph"] = "Filipino"
 
 	fmt.Printf("Welcome please select a language of your choice by typing in the two letter code\n")
 	fmt.Println("Layout:")
