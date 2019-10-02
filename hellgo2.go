@@ -1,41 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/artytheparty/hellgo2.0/makesure"
+)
 
 func main() {
-	var locale, greeting string
-	var languages = [4]string{"en", "es", "de", "fr"}
-	locale = languages[1]
+	var codeHolder string
+	var languages map = make(map[string]string{"en": "Hello", "es": "Hola", "ge": "Guten tag", "fr": "Bonjour", "ko": "Anyo Haseyo", "ru": "Privet", "ja": "Konnichiwa"})
+	var options map := map[string]string{"en": "English", "es": "Espanol", "ge": "German", "fr": "French", "ko": "Korean", "ru": "Russian", "ja": "japanese"}
 
-	/*
-		if locale == "en" {
-			greeting = "Hello"
-		} else if locale == "es" {
-			greeting = "Hola"
-		} else if locale == "de" {
-			greeting = "Guten Tag"
-		} else {
-			greeting = "Yo"
-		}
-	*/
-
-	fmt.Printf("Welcome please select your language from the below\n")
-	for i := 0; i < 4; i++ {
-		fmt.Printf(languages[i])
+	fmt.Printf("Welcome please select a language of your choice by typing in the two letter code\n")
+	fmt.Println("Layout:")
+	fmt.Println("code : Language")
+	for k, v := range options {
+		fmt.Printf("%s : %s\n", k, v)
 	}
+	fmt.Scanln(&codeHolder)
 
-	switch locale {
-	case "en":
-		greeting = "Hello"
-	case "es":
-		greeting = "Hola"
-	case "de":
-		greeting = "Guten Tag"
-	case "fr":
-		greeting = "Bonjour"
-	default:
-		greeting = "Yo"
-	}
-
-	fmt.Printf(greeting + ", Go!\n")
+	fmt.Printf(makesure.Check(codeHolder, languages) + "Let's Go(lang)!\n")
 }
