@@ -1,14 +1,15 @@
 package makesure
 
 func Check(s string, f map[string]string) string {
+	var holder string
 	for k, v := range f {
 		if k == s {
-			return v
+			holder = v
 		} else if len(s) > 2 || len(s) < 2 {
-			return "yo"
+			holder = "yo"
 		} else {
-			return "yo"
+			holder = "Yo"
 		}
 	}
-	return "yo"
+	return holder
 }
